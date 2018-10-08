@@ -20,30 +20,47 @@ Explanation: The array represents the integer 4321.*/
 
 public class PlusOne {
     public static int[] plusOne(int[] digits) {
-        String input = "";
-        for(int i = 0; i < digits.length; i++){
-            input = Integer.toString(digits[i]);
+        if(digits.length == 0){
+            int[] emparr = new int[1];
+            emparr[0] = 1;
+            return emparr;
         }
-        //int inputnum = Integer.parseInt(input);
-        //int output = inputnum + 1;
-        String[] outputstr = input.split(Integer.toString(Integer.parseInt(input) + 1));
-        for(int i = 0; i < outputstr.length; i++){
-            System.out.print(outputstr[1] + " ");
+        if(digits[digits.length - 1] < 9){
+            digits[digits.length - 1] += 1;
+            return digits;
+        }else if(digits[digits.length - 1] == 9){
+            int i = digits.length - 1;
+            int[] result = new int[digits.length];
+            int sum;
+            int index = i;
+            int carry = 1;
+            while(i >= 0)
+            {
+                sum = digits[i] + carry;
+                result[index] = sum % 10;
+                index--;
+                carry = sum / 10;
+                i--;
+            }
+            if(carry == 1){
+                int[] rescarr = new int[result.length + 1];
+                i = result.length - 1;
+                for(int j = rescarr.length - 1; j > 0 ; j--) {
+                    rescarr[j] = result[i];
+                    i--;
+                }
+                rescarr[0] = 1;
+                return rescarr;
+            }
+            return result;
         }
-        System.out.println(outputstr);
-        /*int[] digitsans = new int[Integer.toString(output).length()];
-
-        for(int i = digitsans.length - 1; i >= 0; i--) {
-            digitsans[i] = output % 10;
-            output = output / 10;
-        }*/
-        return digits;
+        return null;
     }
 
     public static void main(String args[]){
-        int[] inp = {4, 3, 2, 1};
+        int[] inp = {};
         int[] out = plusOne(inp);
-        for(int i = 0; i < inp.length; i++){
+        for(int i = 0; i < out.length; i++){
             System.out.print(out[i]);
         }
     }
