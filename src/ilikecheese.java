@@ -1,7 +1,8 @@
 public class ilikecheese {
     public static void main(String[] args) {
-        String s1 = "I like cheese";
-        String s2 = "like";
+        String s1 = "I am using HackerRank to improve programming";
+
+        String s2 = "am HackerRank to improve";
         String[] str1 = s1.split(" ");
         String[] str2 = s2.split(" ");
         String[] res = new String[str1.length];
