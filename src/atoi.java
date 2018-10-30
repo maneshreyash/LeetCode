@@ -1,5 +1,5 @@
 class atoi {
-    public int myAtoi(String str) {
+    static public int myAtoi(String str) {
         if(str.length() == 0){
             return 0;
         }
@@ -25,7 +25,6 @@ class atoi {
                 break;
             }
             if(sign == 1 && (arr[i].equals(" ") && !((int)(arr[i].charAt(0)) >= 48 && (int)(arr[i].charAt(0)) <= 57))){
-                System.out.println("HEREEEE");
                 return 0;
             }
         }
@@ -47,5 +46,10 @@ class atoi {
         }else{
             return (int) res;
         }
+    }
+
+    public static void main(String[] args) {
+        String str = "42";
+        System.out.println(myAtoi(str));
     }
 }
