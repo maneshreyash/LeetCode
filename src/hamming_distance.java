@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class hamming_distance {
-     static public int hammingDistance(int x, int y) {
+     static private int hammingDistance(int x, int y) {
         List<Integer> xb = new ArrayList<>();
         List<Integer> yb = new ArrayList<>();
         int xi = 0;
@@ -55,7 +55,7 @@ public class hamming_distance {
         System.out.println(yb);
         int count = 0;
         for(int i = 0; i < xb.size(); i++){
-            if(xb.get(i) != yb.get(i)){
+            if(xb.get(i).equals(yb.get(i))){
                 count++;
             }
         }
