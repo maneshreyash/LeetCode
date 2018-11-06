@@ -47,7 +47,7 @@ Note:
     1 <= tree.length <= 40000
     0 <= tree[i] < tree.length
 
-*/
+d*/
 
 class fruit_basket {
     public static int totalFruit(int[] tree) {
